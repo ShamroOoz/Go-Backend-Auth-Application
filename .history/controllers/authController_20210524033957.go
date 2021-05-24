@@ -3,12 +3,11 @@ package controllers
 import (
 	"go-auth-app/database"
 	"go-auth-app/models"
-	"strconv"
-	"time"
-
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
 	"golang.org/x/crypto/bcrypt"
+	"strconv"
+	"time"
 )
 
 const SecretKey = "secret"
@@ -72,19 +71,6 @@ func Login(c *fiber.Ctx) error {
 			"message": "could not login",
 		})
 	}
-
-	cookie := fiber.Cookie{
-		Name:     "jwt",
-		Value:    token,
-		Expires:  time.Now().Add(time.Hour * 24),
-		HTTPOnly: true,
-	}
-
-	c.Cookie(&cookie)
-
-	return c.JSON(fiber.Map{
-		"message": "success",
-	})
 }
 
 func User(c *fiber.Ctx) error {

@@ -3,12 +3,11 @@ package controllers
 import (
 	"go-auth-app/database"
 	"go-auth-app/models"
-	"strconv"
-	"time"
-
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
 	"golang.org/x/crypto/bcrypt"
+	"strconv"
+	"time"
 )
 
 const SecretKey = "secret"
