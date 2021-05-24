@@ -106,23 +106,12 @@ func User(c *fiber.Ctx) error {
 	var user models.User
 
 	database.DB.Where("id = ?", claims.Issuer).First(&user)
-
-	return c.JSON(user)
+	
+	return c.SendString("User controlller")
 	
 }
 
 func Logout(c *fiber.Ctx) error {
-	cookie := fiber.Cookie{
-		Name:     "jwt",
-		Value:    "",
-		Expires:  time.Now().Add(-time.Hour),
-		HTTPOnly: true,
-	}
-
-	c.Cookie(&cookie)
-
-	return c.JSON(fiber.Map{
-		"message": "success",
-	})
+	return c.SendString("Logout controlller")
 	
 }
