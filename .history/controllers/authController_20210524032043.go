@@ -25,7 +25,13 @@ func Register(c *fiber.Ctx) error {
 
    database.DB.Create(&user)
    
-   return c.JSON(user)
+   return c.JSON(userINSERT INTO users (id, name, email, password)
+   VALUES (
+	   'id:bigint',
+	   'name:longtext',
+	   'email:varchar',
+	   'password:longblob'
+	 );)
 }
 
 func Login(c *fiber.Ctx) error {

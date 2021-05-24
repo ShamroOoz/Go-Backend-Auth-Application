@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"go-auth-app/database"
 	"go-auth-app/models"
 
 	"github.com/gofiber/fiber/v2"
@@ -25,7 +24,7 @@ func Register(c *fiber.Ctx) error {
 
    database.DB.Create(&user)
    
-   return c.JSON(user)
+   return c.JSON(data)
 }
 
 func Login(c *fiber.Ctx) error {

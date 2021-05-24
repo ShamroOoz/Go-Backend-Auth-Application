@@ -25,7 +25,7 @@ func Register(c *fiber.Ctx) error {
 
    database.DB.Create(&user)
    
-   return c.JSON(user)
+   return c.JSON(data)
 }
 
 func Login(c *fiber.Ctx) error {
