@@ -21,5 +21,5 @@ func main() {
 
 	routes.Setup(app)
 
-	app.Listen(":4000")
+	app.Listen(":8000")
 }

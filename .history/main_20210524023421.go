@@ -1,16 +1,17 @@
 package main
 
 import (
-	"go-auth-app/database"
 	"go-auth-app/routes"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 )
 
 func main() {
 	
- 	database.Connect()
+ 	//database.Connect()
 	
 	
 	app := fiber.New()
@@ -21,5 +22,5 @@ func main() {
 
 	routes.Setup(app)
 
-	app.Listen(":4000")
+	app.Listen(":8000")
 }

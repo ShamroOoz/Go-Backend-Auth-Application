@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"go-auth-app/controllers"
 
 	"github.com/gofiber/fiber/v2"
 )

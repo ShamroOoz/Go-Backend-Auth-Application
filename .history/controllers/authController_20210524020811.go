@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"fmt"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -14,11 +16,11 @@ return c.SendString("Login controlller")
 }
 
 func User(c *fiber.Ctx) error {
-	return c.SendString("User controlller")
-	
+	fmt.Println("User controlller")
+	return nil
 }
 
 func Logout(c *fiber.Ctx) error {
-	return c.SendString("Logout controlller")
-	
+	fmt.Println("Logout controlller")
+	return nil
 }
